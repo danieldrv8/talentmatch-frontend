@@ -18,6 +18,10 @@ export class AppComponent {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getAllCandidates().subscribe(candidates => this.candidates = candidates);
+    this.apiService.getAllCandidates().subscribe(response => {
+      console.log(response); // Esto te permitirá inspeccionar la estructura en la consola
+      this.candidates = response.candidates; // Ajusta según el nombre de la clave
+    });
   }
+  
 }
