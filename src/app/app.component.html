@@ -16,7 +16,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>DasId</th>
-            <th>SkillsIds</th>
+            <th>Skills</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +25,9 @@
             <td>{{candidate.candidateName}}</td>
             <td>{{candidate.email}}</td>
             <td>{{candidate.dasId}}</td>
-            <td>{{candidate.skillsIds}}</td>
+            @for (skill of candidate.skills; track skill.skillName) {
+              <td>{{skill.skillName}}</td>
+            }
           </tr>
         </tbody>
         @if (candidates.length == 0) {
