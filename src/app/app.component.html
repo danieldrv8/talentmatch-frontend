@@ -25,10 +25,9 @@
             <td>{{candidate.candidateName}}</td>
             <td>{{candidate.email}}</td>
             <td>{{candidate.dasId}}</td>
-            @for (skill of candidate.skills; track skill.skillName) {
+            @for (skill of skills; track skill.skillName) {
               <td>{{skill.skillName}}</td>
             }
-          </tr>
         </tbody>
         @if (candidates.length == 0) {
           <tr>

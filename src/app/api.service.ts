@@ -23,4 +23,8 @@ export class ApiService {
   getAllCandidates() {
     return this.http.get<ApiResponse>(this.apiUrl + '/candidates');
   }
+
+  getSkillbyId(id: number) {
+    return this.http.get<any>(this.apiUrl + '/skills/' + id);
+  }
 }

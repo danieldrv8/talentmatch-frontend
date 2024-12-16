@@ -1,3 +1,4 @@
+import { CandidateSkill } from "./candidate-skill";
 import { Skill } from "./skill";
 
 export interface Candidate {
@@ -5,6 +6,5 @@ export interface Candidate {
   candidateName: string;
   email: string;
   dasId: string;
-  skillsIds: number[];
-  skills: Skill[];
+  skills: CandidateSkill[];
 }
