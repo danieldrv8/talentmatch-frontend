@@ -7,24 +7,15 @@ import { Skill } from './interfaces/skill';
 import { CandidateSkill } from './interfaces/candidate-skill';
 import { Observable, forkJoin, from } from 'rxjs';
 import { mergeMap, map, toArray } from 'rxjs/operators';
+import { CandidatesComponent } from "./components/candidates/candidates.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, CandidatesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'talentmatch-frontend';
-  public candidates: Candidate[] = [];
-
-  constructor(private apiService: ApiService) {}
-
-  ngOnInit() {
-    this.apiService.getAllCandidates().subscribe(response => {
-      console.log(response); // Log the response to inspect its structure
-      this.candidates = response.candidates; // Assuming response.candidates is the correct key
-    });
-  }
 }
