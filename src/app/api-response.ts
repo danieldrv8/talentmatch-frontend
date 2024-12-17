@@ -1,4 +1,4 @@
-import { Candidate } from "./candidate";
+import { Candidate } from "./interfaces/candidate";
 
 export interface ApiResponse {
   candidates: Candidate[];

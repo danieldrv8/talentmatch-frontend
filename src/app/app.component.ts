@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ApiService } from './api.service';
-import { Candidate } from './candidate';
+import { ApiService } from './services/api.service';
+import { Candidate } from './interfaces/candidate';
 import { CommonModule } from '@angular/common';
-import { Skill } from './skill';
-import { CandidateSkill } from './candidate-skill';
+import { Skill } from './interfaces/skill';
+import { CandidateSkill } from './interfaces/candidate-skill';
 import { Observable, forkJoin, from } from 'rxjs';
 import { mergeMap, map, toArray } from 'rxjs/operators';
 

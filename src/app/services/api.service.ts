@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Candidate } from './candidate';
-import { ApiResponse } from './api-response';
-import { Skill } from './skill';
+import { Candidate } from '../interfaces/candidate';
+import { ApiResponse } from '../api-response';
+import { Skill } from '../interfaces/skill';
 import { Observable } from 'rxjs';
 
 @Injectable({
