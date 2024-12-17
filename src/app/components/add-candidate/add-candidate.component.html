@@ -1,0 +1,37 @@
+<div class="container mt-5">
+
+  <!-- Formulario -->
+  <div class="row justify-content-center">
+    <div class="col-lg-8 col-md-10">
+      <div class="card shadow-sm border-0 rounded">
+        <div class="card-body p-4">
+          <form>
+            <!-- Nombre -->
+            <div class="mb-3">
+              <label for="candidateName" class="form-label">Name</label>
+              <input type="text" class="form-control" id="candidateName" [(ngModel)]="candidate.candidateName" name="name" placeholder="Enter Candidate Name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="candidateEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="candidateEmail" [(ngModel)]="candidate.email" name="email" placeholder="Enter Email Address" required>
+            </div>
+
+            <!-- DasId -->
+            <div class="mb-3">
+              <label for="dasId" class="form-label">Das ID</label>
+              <input type="text" class="form-control" id="dasId" [(ngModel)]="candidate.dasId" name="dasId" placeholder="Enter Das ID" required>
+            </div>
+
+            <!-- Botones -->
+            <div class="d-flex justify-content-end mt-4">
+              <button type="button" class="btn btn-secondary me-2" (click)="cancel()">Cancel</button>
+              <button type="submit" class="btn btn-primary" (click)="addCandidate(candidate)">Add Candidate</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

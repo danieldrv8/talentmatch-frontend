@@ -41,4 +41,8 @@ export class ApiService {
   getCandidateById(id: number) {
     return this.http.get<any>(this.apiUrl + '/candidates/' + id);
   }
+
+  addCandidate(candidate: Candidate) {
+    return this.http.post<any>(this.apiUrl + '/candidates', candidate);
+  }
 }
