@@ -50,13 +50,13 @@
                         <td>{{skill.skillName}}</td>
                         
                         <td>
-                          <input type="text" name="yearsOfExperience" [(ngModel)]="skill.yearsOfExperience"/>
+                          <input type="number" name="yearsOfExperience" [(ngModel)]="skill.yearsOfExperience"/>
                         </td>
                         <td>
                           <input type="text" name="proficiency" [(ngModel)]="skill.proficiency"/>
                         </td>
                         <td>
-                          <input type="text" name="lastYearUsed" [(ngModel)]="skill.lastYearUsed"  />
+                          <input type="number" name="lastYearUsed" [(ngModel)]="skill.lastYearUsed"  />
                         </td>
                         <td class="text-center">
                           <input type="checkbox" name="skill" [(ngModel)]="skill.isSelected" />

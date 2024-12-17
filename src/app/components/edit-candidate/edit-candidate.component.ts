@@ -3,6 +3,8 @@ import { ApiService } from '../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Candidate } from '../../interfaces/candidate';
 import { FormsModule } from '@angular/forms';
+import { Skill } from '../../interfaces/skill';
+import { CandidateSkill } from '../../interfaces/candidate-skill';
 
 @Component({
   selector: 'app-edit-candidate',
@@ -13,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 export class EditCandidateComponent {
 
   candidate: Candidate = {id: 0, candidateName: '', email: '', dasId: '', candidateSkills: []}; // Initialize with empty values
+  public skills: Skill[] = [];
 
   constructor(private apiService: ApiService, private router: Router, private route: ActivatedRoute) {}
 
@@ -28,6 +31,21 @@ export class EditCandidateComponent {
   }
 
   updateCandidate(candidateId: number, candidate: Candidate){
+    const candidataSkills: CandidateSkill[] = [];
+  
+  for (let index = 0; index < this.skills.length; index++) {
+    console.log(this.skills[index].id);
+    if (this.skills[index].isSelected) {
+      candidataSkills.push({
+        skillId: this.skills[index].id,
+        lastYearsOfExperience: this.skills[index].lastYearUsed,
+        proficiency: this.skills[index].proficiency,
+        yearsOfExperience: this.skills[index].yearsOfExperience
+      } as CandidateSkill);
+    }
+  }
+  
+  candidate.candidateSkills = candidataSkills;
     this.apiService.updateCandidate(candidateId, candidate).subscribe(response => {
       console.log(response); // Log the response to inspect its structure
       this.router.navigate(['/']);
@@ -35,8 +53,20 @@ export class EditCandidateComponent {
   }
 
   loadCandidateDetails(candidateId: number) {
-    this.apiService.getCandidateById(candidateId).subscribe(data => {
+    this.apiService.getCandidateCS(candidateId).subscribe(data => {
       this.candidate = data.candidate;
+      for (let index = 0; index < this.candidate.candidateSkills.length; index++) {
+        const element = this.candidate.candidateSkills[index];
+        console.log('Element:' + element);
+        this.apiService.getSkillbyId(element.skillId).subscribe(data => {
+          this.skills.push({id: element.skillId, 
+            skillName: data.skill.skillName,
+            yearsOfExperience: element.yearsOfExperience, 
+            proficiency: element.proficiency, 
+            lastYearUsed: element.lastYearsOfExperience}
+          );
+        });
+      }
     });
   }
   
