@@ -33,4 +33,12 @@ export class ApiService {
   getSkillNames(id: number) {
     return this.http.get<any>(this.apiUrl + '/candidates/' + id + '/skillNames');
   }
+
+  updateCandidate(id: number, candidate: Candidate){
+    return this.http.put<any>(this.apiUrl + '/candidates/' + id, candidate)
+  }
+
+  getCandidateById(id: number) {
+    return this.http.get<any>(this.apiUrl + '/candidates/' + id);
+  }
 }

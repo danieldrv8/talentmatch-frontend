@@ -4,7 +4,7 @@ import { CandidatesComponent } from './components/candidates/candidates.componen
 
 export const routes: Routes = [
   {
-    path: 'edit/:id', component: EditCandidateComponent
+    path: 'edit/:candidateId', component: EditCandidateComponent
   },
   {
     path: '', component: CandidatesComponent

@@ -7,5 +7,5 @@ export interface Candidate {
   email: string;
   dasId: string;
   candidateSkills: CandidateSkill[];
-  skills: Skill[];
+  skills?: Skill[];
 }
