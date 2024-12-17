@@ -20,20 +20,25 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let candidate of candidates"> 
-            <td>{{candidate.id}}</td>
-            <td>{{candidate.candidateName}}</td>
-            <td>{{candidate.email}}</td>
-            <td>{{candidate.dasId}}</td>
-            @for (skill of skills; track skill.skillName) {
-              <td>{{skill.skillName}}</td>
-            }
+          @if (candidates.length === 0) {
+            <tr>
+              <td colspan="5">No users</td>
+            </tr>
+          }
+          @for (candidate of candidates; track candidate.id) {
+            <tr>
+              <td>{{candidate.id}}</td>
+              <td>{{candidate.candidateName}}</td>
+              <td>{{candidate.email}}</td>
+              <td>{{candidate.dasId}}</td>
+              <td>
+                  @for (skill of candidate.skills; track skill.id) {
+                  {{skill.skillName}} 
+                }
+              </td>
+            </tr>
+          }
         </tbody>
-        @if (candidates.length == 0) {
-          <tr>
-            <td colspan="5">No users</td>
-          </tr>
-        }
       </table>
     </div>
   </div>
