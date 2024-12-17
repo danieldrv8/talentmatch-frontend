@@ -24,6 +24,51 @@
               <input type="text" class="form-control" id="dasId" [(ngModel)]="candidate.dasId" name="dasId" placeholder="Enter Das ID" required>
             </div>
 
+            <!-- Skills -->
+            <!--<app-skills></app-skills>-->
+      
+            <div class="card-header bg-dark text-white text-center">
+              <h3 class="mb-0">Skills</h3>
+            </div>
+            <div class="card-body p-4">
+              <!-- Tabla de Skills -->
+              <div class="table-responsive">
+                <table class="table table-striped table-hover table-bordered">
+                  <thead class="bg-secondary text-white text-center">
+                    <tr>
+                      <th>Skill</th>
+                      <th>Years of Experience</th> 
+                      <th>Proficiency</th>
+                      <th>Last Year Used</th>
+                      <th>Select</th>
+                    </tr>
+                  <tbody>
+                    <!-- Mostrar la lista de skills -->
+                    
+                    @for (skill of skills; track skill.id) {
+                      <tr>
+                        <td>{{skill.skillName}}</td>
+                        
+                        <td>
+                          <input type="text" name="yearsOfExperience" [(ngModel)]="skill.yearsOfExperience"/>
+                        </td>
+                        <td>
+                          <input type="text" name="proficiency" [(ngModel)]="skill.proficiency"/>
+                        </td>
+                        <td>
+                          <input type="text" name="lastYearUsed" [(ngModel)]="skill.lastYearUsed"  />
+                        </td>
+                        <td class="text-center">
+                          <input type="checkbox" name="skill" [(ngModel)]="skill.isSelected" />
+                        </td>
+                      </tr>
+                    }
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+
             <!-- Botones -->
             <div class="d-flex justify-content-end mt-4">
               <button type="button" class="btn btn-secondary me-2" (click)="cancel()">Cancel</button>

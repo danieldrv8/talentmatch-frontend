@@ -1,7 +1,6 @@
 export interface CandidateSkill {
-  candidateId: number;
+  candidateId?: number;
   skillId: number;
-  id: number;
   proficiency: string;
   yearsOfExperience: number;
   lastYearsOfExperience: number;
