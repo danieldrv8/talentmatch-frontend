@@ -8,11 +8,12 @@ import { CandidateSkill } from './interfaces/candidate-skill';
 import { Observable, forkJoin, from } from 'rxjs';
 import { mergeMap, map, toArray } from 'rxjs/operators';
 import { CandidatesComponent } from "./components/candidates/candidates.component";
+import { HeaderComponent } from "./components/header/header.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, CandidatesComponent],
+  imports: [RouterOutlet, CommonModule, CandidatesComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

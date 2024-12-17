@@ -1,20 +1,3 @@
-/* Contenedor principal */
-.container {
-  background-color: #f8f9fa; /* Fondo gris claro */
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  padding: 20px;
-}
-
-/* Estilo del encabezado principal */
-h1.display-4 {
-  background: linear-gradient(135deg, #007bff, #0056b3); /* Degradado azul */
-  color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
 /* Estilo de las tarjetas */
 .card {
   border: none; /* Sin bordes */

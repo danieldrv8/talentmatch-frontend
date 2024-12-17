@@ -1,0 +1,8 @@
+/* Contenedor principal */
+.container {
+  background-color: #f8f9fa; /* Fondo gris claro */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  padding: 20px;
+}
+
