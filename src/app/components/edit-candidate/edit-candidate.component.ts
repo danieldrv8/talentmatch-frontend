@@ -71,30 +71,34 @@ export class EditCandidateComponent {
     });
   }
 
-  /*addSkill() {
+  addSkill() {
     let skillName = window.prompt('Enter the skill name:', '');
 
-    if (skillName == null) {
+    if (skillName !== null && skillName != '') {
+      
+      console.log(skillName);
+
+    this.apiService.getSkillByName(skillName).subscribe(data => {
+      if (data.skill.skillId == null ) {
+        this.apiService.addSkill(skillName);
+        this.apiService.getSkillbyId(data.skill.id).subscribe(data => {
+          this.skills.push({
+            id: data.skill.id,
+            skillName: data.skill.skillName,
+            yearsOfExperience: 0,
+            proficiency: '',
+            lastYearUsed: 0,
+            isSelected: false
+          });
+        });
+      }
+    });
+      
+    } else {
+      window.alert('The skill must have a name');
       return;
     }
 
-    console.log(skillName);
-
-    this.apiService.getSkillByName(skillName).subscribe(data => {
-      if (data.skill.skillId == null) {
-        this.apiService.addSkill(skillName);
-      }
-
-      this.apiService.getSkillbyId(data.skill.id).subscribe(data => {
-        this.skills.push({
-          id: data.skill.id,
-          skillName: data.skill.skillName,
-          yearsOfExperience: 0,
-          proficiency: '',
-          lastYearUsed: 0,
-          isSelected: false
-        });
-      });
-    });
-  }*/
+    
+  }
 }
