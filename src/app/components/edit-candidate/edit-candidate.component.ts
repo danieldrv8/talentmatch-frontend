@@ -63,12 +63,38 @@ export class EditCandidateComponent {
             skillName: data.skill.skillName,
             yearsOfExperience: element.yearsOfExperience, 
             proficiency: element.proficiency, 
-            lastYearUsed: element.lastYearsOfExperience}
+            lastYearUsed: element.lastYearsOfExperience,
+            isSelected: true}
           );
         });
       }
     });
   }
-  
-  
+
+  /*addSkill() {
+    let skillName = window.prompt('Enter the skill name:', '');
+
+    if (skillName == null) {
+      return;
+    }
+
+    console.log(skillName);
+
+    this.apiService.getSkillByName(skillName).subscribe(data => {
+      if (data.skill.skillId == null) {
+        this.apiService.addSkill(skillName);
+      }
+
+      this.apiService.getSkillbyId(data.skill.id).subscribe(data => {
+        this.skills.push({
+          id: data.skill.id,
+          skillName: data.skill.skillName,
+          yearsOfExperience: 0,
+          proficiency: '',
+          lastYearUsed: 0,
+          isSelected: false
+        });
+      });
+    });
+  }*/
 }

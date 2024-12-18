@@ -42,7 +42,7 @@
                     </td>
                     <!-- Botones de acción -->
                     <td class="text-center">
-                      <button class="btn btn-sm btn-outline-primary me-1">
+                      <button class="btn btn-sm btn-outline-primary me-1"  (click)="viewCandidate(candidate.id)">
                         <i class="bi bi-eye"></i> View
                       </button>
                       <button class="btn btn-sm btn-outline-success" (click)="editCandidate(candidate.id)">

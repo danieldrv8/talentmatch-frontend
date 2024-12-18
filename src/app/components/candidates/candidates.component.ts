@@ -26,6 +26,10 @@ export class CandidatesComponent {
     this.router.navigate(['/edit', candidateId]);
   }
 
+  viewCandidate(candidateId: number) {
+    this.router.navigate(['/view', candidateId]);
+  }
+
   addCandidate() {
     this.router.navigate(['/add']);
   }

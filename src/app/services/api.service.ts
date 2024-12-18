@@ -53,4 +53,19 @@ export class ApiService {
   getCandidateCS(candidateId: number) {
     return this.http.get<any>(this.apiUrl + '/candidates/' + candidateId + '/cs');
   }
+
+  getSkillByName(skillName: string) {
+    return this.http.get<any>(this.apiUrl + '/skills/name/' + skillName);
+  }
+
+  addSkill(skillName: string) {
+    const skill: Skill = {
+      skillName: skillName,
+      id: 0,
+      yearsOfExperience: 0,
+      proficiency: '',
+      lastYearUsed: 0
+    };
+    return this.http.post<any>(this.apiUrl + '/skills', skill);
+  }
 }

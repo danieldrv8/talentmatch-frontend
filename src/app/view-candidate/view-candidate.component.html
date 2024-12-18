@@ -1,0 +1,68 @@
+  <!-- Sección de Usuarios -->
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-md-12">
+      <div class="card shadow-sm border-0 rounded">
+        <div class="card-header bg-dark text-white text-center">
+          <h2 class="mb-0">Candidates</h2>
+        </div>
+        <div class="card-body p-4">
+          <!-- Tabla de Usuarios -->
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+              <thead class="bg-secondary text-white text-center">
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>DasId</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td>{{candidate.candidateName}}</td>
+                <td>{{candidate.email}}</td>
+                <td>{{candidate.dasId}}</td>
+              </tbody>
+            </table>
+            <!-- Tabla de Skills -->
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-bordered">
+                <thead class="bg-secondary text-white text-center">
+                  <tr>
+                    <th>Skill</th>
+                    <th>Years of Experience</th>
+                    <th>Proficiency</th>
+                    <th>Last Year Used</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <!-- Mostrar la lista de skills -->
+
+                  @for (skill of skills; track skill.id) {
+                  <tr>
+                    <td>{{ skill.skillName }}</td>
+
+                    <td style="text-align: center;">
+                      {{skill.yearsOfExperience}}
+                    </td>
+                    <td class="text-center">
+                      {{skill.proficiency}}s
+                    </td>
+                    <td class="text-center">
+                      {{skill.lastYearUsed}}
+                    </td>
+                  </tr>
+                  }
+                </tbody>
+              </table>
+              <!-- Botones -->
+                <div class="d-flex justify-content-end mt-4">
+                  <button class="btn btn-primary btn-lg btn-block" (click)="goBack()">
+                    <i class="bi bi-plus-circle"></i> Back
+                  </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

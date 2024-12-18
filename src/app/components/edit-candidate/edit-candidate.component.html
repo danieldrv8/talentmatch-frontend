@@ -1,5 +1,4 @@
 <div class="container mt-5">
-
   <!-- Formulario -->
   <div class="row justify-content-center">
     <div class="col-lg-8 col-md-10">
@@ -9,23 +8,47 @@
             <!-- Nombre -->
             <div class="mb-3">
               <label for="candidateName" class="form-label">Name</label>
-              <input type="text" class="form-control" id="candidateName" [(ngModel)]="candidate.candidateName" name="name" placeholder="Enter Candidate Name" required>
+              <input
+                type="text"
+                class="form-control"
+                id="candidateName"
+                [(ngModel)]="candidate.candidateName"
+                name="name"
+                placeholder="Enter Candidate Name"
+                required
+              />
             </div>
 
             <!-- Email -->
             <div class="mb-3">
               <label for="candidateEmail" class="form-label">Email</label>
-              <input type="email" class="form-control" id="candidateEmail" [(ngModel)]="candidate.email" name="email" placeholder="Enter Email Address" required>
+              <input
+                type="email"
+                class="form-control"
+                id="candidateEmail"
+                [(ngModel)]="candidate.email"
+                name="email"
+                placeholder="Enter Email Address"
+                required
+              />
             </div>
 
             <!-- DasId -->
             <div class="mb-3">
               <label for="dasId" class="form-label">Das ID</label>
-              <input type="text" class="form-control" id="dasId" [(ngModel)]="candidate.dasId" name="dasId" placeholder="Enter Das ID" required>
+              <input
+                type="text"
+                class="form-control"
+                id="dasId"
+                [(ngModel)]="candidate.dasId"
+                name="dasId"
+                placeholder="Enter Das ID"
+                required
+              />
             </div>
- <!-- Skills -->
+            <!-- Skills -->
             <!--<app-skills></app-skills>-->
-      
+
             <div class="card-header bg-dark text-white text-center">
               <h3 class="mb-0">Skills</h3>
             </div>
@@ -36,41 +59,83 @@
                   <thead class="bg-secondary text-white text-center">
                     <tr>
                       <th>Skill</th>
-                      <th>Years of Experience</th> 
+                      <th>Years of Experience</th>
                       <th>Proficiency</th>
                       <th>Last Year Used</th>
                       <th>Select</th>
                     </tr>
+                  </thead>
+
                   <tbody>
                     <!-- Mostrar la lista de skills -->
-                    
+
                     @for (skill of skills; track skill.id) {
-                      <tr>
-                        <td>{{skill.skillName}}</td>
-                        
-                        <td>
-                          <input type="number" name="yearsOfExperience" [(ngModel)]="skill.yearsOfExperience"/>
-                        </td>
-                        <td>
-                          <input type="text" name="proficiency" [(ngModel)]="skill.proficiency"/>
-                        </td>
-                        <td>
-                          <input type="number" name="lastYearUsed" [(ngModel)]="skill.lastYearUsed"  />
-                        </td>
-                        <td class="text-center">
-                          <input type="checkbox" name="skill" [(ngModel)]="skill.isSelected" />
-                        </td>
-                      </tr>
+                    <tr>
+                      <td>{{ skill.skillName }}</td>
+
+                      <td>
+                        <input
+                          type="number"
+                          name="yearsOfExperience"
+                          [(ngModel)]="skill.yearsOfExperience"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="text"
+                          name="proficiency"
+                          [(ngModel)]="skill.proficiency"
+                        />
+                      </td>
+                      <td>
+                        <input
+                          type="number"
+                          name="lastYearUsed"
+                          [(ngModel)]="skill.lastYearUsed"
+                        />
+                      </td>
+                      <td class="text-center">
+                        <input
+                          type="checkbox"
+                          name="skill"
+                          [(ngModel)]="skill.isSelected"
+                        />
+                      </td>
+                    </tr>
                     }
                   </tbody>
                 </table>
               </div>
+              <!-- Add Skill Button
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  (click)="addSkill()"
+                >
+                  Add Skill
+                </button>
+              </div>
+               -->
             </div>
+            
 
             <!-- Botones -->
             <div class="d-flex justify-content-end mt-4">
-              <button type="button" class="btn btn-secondary me-2" (click)="cancel()">Cancel</button>
-              <button type="submit" class="btn btn-primary" (click)="updateCandidate(candidate.id, candidate)">Save Changes</button>
+              <button
+                type="button"
+                class="btn btn-secondary me-2"
+                (click)="cancel()"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                (click)="updateCandidate(candidate.id, candidate)"
+              >
+                Save Changes
+              </button>
             </div>
           </form>
         </div>
