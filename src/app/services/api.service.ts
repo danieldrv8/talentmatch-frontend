@@ -68,4 +68,8 @@ export class ApiService {
   deleteSkill(skillId: number) {
     return this.http.delete<any>(this.apiUrl + '/skills/' + skillId);
   }
+
+  getAllProjects() {
+    return this.http.get<any>(this.apiUrl + '/projects');
+  }
 }

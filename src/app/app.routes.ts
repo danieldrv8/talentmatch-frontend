@@ -4,6 +4,7 @@ import { CandidatesComponent } from './components/candidates/candidates.componen
 import { AddCandidateComponent } from './components/add-candidate/add-candidate.component';
 import { ViewCandidateComponent } from './view-candidate/view-candidate.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 
 export const routes: Routes = [
   {
@@ -20,5 +21,8 @@ export const routes: Routes = [
   },
   {
     path: 'skills', component: SkillsComponent
+  },
+  {
+    path: 'projects', component: ProjectsComponent
   }
 ];
