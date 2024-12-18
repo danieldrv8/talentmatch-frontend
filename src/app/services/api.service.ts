@@ -59,13 +59,13 @@ export class ApiService {
   }
 
   addSkill(skillName: string) {
-    const skill: Skill = {
-      skillName: skillName,
-      id: 0,
-      yearsOfExperience: 0,
-      proficiency: '',
-      lastYearUsed: 0
+    const skill = {
+      skillName: skillName
     };
     return this.http.post<any>(this.apiUrl + '/skills', skill);
+  }
+
+  deleteSkill(skillId: number) {
+    return this.http.delete<any>(this.apiUrl + '/skills/' + skillId);
   }
 }
