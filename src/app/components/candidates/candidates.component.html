@@ -1,4 +1,5 @@
-  <!-- Sección de Usuarios -->
+<!-- Sección de Usuarios -->
+<div class="container mt-2">
   <div class="row justify-content-center">
     <div class="col-lg-10 col-md-12">
       <div class="card shadow-sm border-0 rounded">
@@ -21,35 +22,41 @@
               <tbody>
                 <!-- Mensaje si no hay usuarios -->
                 @if (candidates.length === 0) {
-                  <tr>
-                    <td colspan="6" class="text-center text-danger py-4">
-                      <strong>No users available</strong>
-                    </td>
-                  </tr>
+                <tr>
+                  <td colspan="6" class="text-center text-danger py-4">
+                    <strong>No users available</strong>
+                  </td>
+                </tr>
                 }
                 <!-- Mostrar la lista de usuarios -->
                 @for (candidate of candidates; track candidate.id) {
-                  <tr>
-                    <td>{{candidate.candidateName}}</td>
-                    <td>{{candidate.email}}</td>
-                    <td>{{candidate.dasId}}</td>
-                    <td>
-                      @for (skill of candidate.skills; track skill.id) {
-                        <span class="badge bg-info text-white me-1 mb-1">
-                          {{skill.skillName}}
-                        </span>
-                      }
-                    </td>
-                    <!-- Botones de acción -->
-                    <td class="text-center">
-                      <button class="btn btn-sm btn-outline-primary me-1"  (click)="viewCandidate(candidate.id)">
-                        <i class="bi bi-eye"></i> View
-                      </button>
-                      <button class="btn btn-sm btn-outline-success" (click)="editCandidate(candidate.id)">
-                        <i class="bi bi-pencil"></i> Edit
-                      </button>
-                    </td>
-                  </tr>
+                <tr>
+                  <td>{{ candidate.candidateName }}</td>
+                  <td>{{ candidate.email }}</td>
+                  <td>{{ candidate.dasId }}</td>
+                  <td>
+                    @for (skill of candidate.skills; track skill.id) {
+                    <span class="badge bg-info text-white me-1 mb-1">
+                      {{ skill.skillName }}
+                    </span>
+                    }
+                  </td>
+                  <!-- Botones de acción -->
+                  <td class="text-center">
+                    <button
+                      class="btn btn-sm btn-outline-primary me-1"
+                      (click)="viewCandidate(candidate.id)"
+                    >
+                      <i class="bi bi-eye"></i> View
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-success"
+                      (click)="editCandidate(candidate.id)"
+                    >
+                      <i class="bi bi-pencil"></i> Edit
+                    </button>
+                  </td>
+                </tr>
                 }
               </tbody>
             </table>
@@ -58,10 +65,13 @@
       </div>
       <div class="col-lg-2 col-md-12">
         <!-- Botón para agregar usuario -->
-        <button class="btn btn-primary btn-lg btn-block" (click)="addCandidate()">
+        <button
+          class="btn btn-primary btn-lg btn-block"
+          (click)="addCandidate()"
+        >
           <i class="bi bi-plus-circle"></i> Add Candidate
         </button>
       </div>
     </div>
   </div>
-
+</div>

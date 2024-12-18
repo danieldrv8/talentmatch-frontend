@@ -3,6 +3,7 @@ import { EditCandidateComponent } from './components/edit-candidate/edit-candida
 import { CandidatesComponent } from './components/candidates/candidates.component';
 import { AddCandidateComponent } from './components/add-candidate/add-candidate.component';
 import { ViewCandidateComponent } from './view-candidate/view-candidate.component';
+import { SkillsComponent } from './components/skills/skills.component';
 
 export const routes: Routes = [
   {
@@ -16,5 +17,8 @@ export const routes: Routes = [
   },
   {
     path: 'view/:id', component: ViewCandidateComponent
+  },
+  {
+    path: 'skills', component: SkillsComponent
   }
 ];

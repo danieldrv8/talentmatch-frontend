@@ -3,13 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Candidate } from '../../interfaces/candidate';
-import { SkillsComponent } from "../skills/skills.component";
 import { Skill } from '../../interfaces/skill';
 import { CandidateSkill } from '../../interfaces/candidate-skill';
 
 @Component({
   selector: 'app-add-candidate',
-  imports: [FormsModule, SkillsComponent, SkillsComponent],
+  imports: [FormsModule],
   templateUrl: './add-candidate.component.html',
   styleUrl: './add-candidate.component.css'
 })
