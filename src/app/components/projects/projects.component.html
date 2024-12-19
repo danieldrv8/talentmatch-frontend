@@ -11,8 +11,6 @@
         <thead class="bg-secondary text-white text-center">
           <tr>
             <th>Project Name</th>
-            <th>Skills</th>
-            <th>Candidates</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -29,29 +27,9 @@
           @for (project of projects; track project.id) {
           <tr>
             <td>{{ project.projectName }}</td>
-            <td>
-              @for (skill of skills; track skill.id) {
-              <span class="badge bg-info text-white me-1 mb-1">
-                {{ skill.skillName }}
-              </span>
-              }
-              
-            </td>
-            <td>
-              @for (candidate of candidates; track candidate.id) {
-                <span class="badge bg-info text-white me-1 mb-1">
-                  {{ candidate.candidateName }}
-                </span>
-                }
-            </td>
+            
             <!-- Botones de acción -->
             <td class="text-center">
-              <button
-                class="btn btn-sm btn-outline-primary me-1"
-                (click)="viewProject(project.id)"
-              >
-                <i class="bi bi-eye"></i> View
-              </button>
               <button
                 class="btn btn-sm btn-outline-success"
                 (click)="editProject(project.id)"
@@ -72,6 +50,6 @@
     class="btn btn-primary btn-lg btn-block"
     (click)="addProject()"
   >
-    <i class="bi bi-plus-circle"></i> Add Candidate
+    <i class="bi bi-plus-circle"></i> Add Project
   </button>
 </div>

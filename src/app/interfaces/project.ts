@@ -3,4 +3,6 @@ export interface Project {
   projectName: string;
   skillIds: number[];
   candidateIds: number[];
+  skillNames: string[];
+  candidateNames: string[];
 }

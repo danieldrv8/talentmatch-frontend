@@ -1,0 +1,92 @@
+<!-- Formulario -->
+<div class="card shadow-sm border-0 rounded">
+  <div class="card-body p-4">
+    <form>
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label for="projectName" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="projectName"
+          [(ngModel)]="project.projectName"
+          name="name"
+          placeholder="Enter Project Name"
+          required
+        />
+      </div>
+      <!-- Skills -->
+      <!--<app-skills></app-skills>-->
+
+      <div class="card-header bg-dark text-white text-center">
+        <h3 class="mb-0">Skills</h3>
+      </div>
+      <div class="card-body p-4">
+        <!-- Tabla de Skills -->
+        <div class="table-responsive">
+          <table class="table table-striped table-hover table-bordered">
+            <thead class="bg-secondary text-white text-center">
+              <tr>
+                <th>Skill</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <!-- Mostrar la lista de skills -->
+
+              @for (skill of skills; track skill.id) {
+              <tr>
+                <td>{{ skill.skillName }}</td>
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover table-bordered">
+            <thead class="bg-secondary text-white text-center">
+              <tr>
+                <th>Candidate Name</th>
+                <th>DAS ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Mostrar la lista de skills -->
+
+              @for (candidate of candidates; track candidate.id) {
+              <tr>
+                <td>{{ candidate.candidateName }}</td>
+                <td>{{ candidate.dasId }}</td>
+              </tr>
+              }
+            </tbody>
+        </table>
+      </div>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" (click)="addSkill()">
+            Add Skill
+          </button>
+          <button type="button" class="btn btn-success" (click)="addCandidate()">
+            Add Candidate
+          </button>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="d-flex justify-content-end mt-4">
+        <button type="button" class="btn btn-secondary me-2" (click)="cancel()">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="updateProject(project.id, project)"
+        >
+          Save Changes
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

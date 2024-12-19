@@ -4,6 +4,7 @@ import { Candidate } from '../interfaces/candidate';
 import { ApiResponse } from '../api-response';
 import { Skill } from '../interfaces/skill';
 import { Observable } from 'rxjs';
+import { Project } from '../interfaces/project';
 
 @Injectable({
   providedIn: 'root'
@@ -71,5 +72,17 @@ export class ApiService {
 
   getAllProjects() {
     return this.http.get<any>(this.apiUrl + '/projects');
+  }
+
+  getProjectById(id: number) {
+    return this.http.get<any>(this.apiUrl + '/projects/' + id);
+  }
+
+  addProject(project: Project) {
+    return this.http.post<any>(this.apiUrl + '/projects', project);
+  }
+
+  updateProject(id: number, project: Project) {
+    return this.http.put<any>(this.apiUrl + '/projects/' + id, project);
   }
 }
