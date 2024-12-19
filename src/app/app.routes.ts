@@ -6,6 +6,7 @@ import { ViewCandidateComponent } from './view-candidate/view-candidate.componen
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
+import { AddProjectComponent } from './components/add-project/add-project.component';
 
 export const routes: Routes = [
   {
@@ -28,5 +29,8 @@ export const routes: Routes = [
   },
   {
     path: 'edit-project/:id', component: EditProjectComponent
+  },
+  {
+    path: 'add-project', component: AddProjectComponent
   }
 ];

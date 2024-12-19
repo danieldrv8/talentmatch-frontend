@@ -1,0 +1,107 @@
+<div class="card shadow-sm border-0 rounded">
+  <div class="card-body p-4">
+    <form>
+      <!-- Nombre -->
+      <div class="mb-3">
+        <label for="projectName" class="form-label">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="projectName"
+          [(ngModel)]="project.projectName"
+          name="name"
+          placeholder="Enter Candidate Name"
+          required
+        />
+      </div>
+      <!-- Skills -->
+      <!--<app-skills></app-skills>-->
+      <form>
+        <div class="card-header bg-dark text-white text-center">
+          <h3 class="mb-0">Skills</h3>
+        </div>
+        <div class="card-body p-4">
+          <!-- Tabla de Skills -->
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+              <thead class="bg-secondary text-white text-center">
+                <tr>
+                  <th>Skill</th>
+                  <th>Select</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- Mostrar la lista de skills -->
+
+                @for (skill of skills; track skill.id) {
+                <tr>
+                  <td>{{ skill.skillName }}</td>
+                  <td>
+                    <input type="checkbox" name="skillSelect" [(ngModel)]="skill.isSelected" />
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card-header bg-dark text-white text-center">
+          <h3 class="mb-0">Candidates</h3>
+        </div>
+      </form>
+
+      <form>
+        <div class="card-body p-4">
+          <!-- Tabla de Candidates -->
+          <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+              <thead class="bg-secondary text-white text-center">
+                <tr>
+                  <th>Name</th>
+                  <th>DasId</th>
+                  <th>Select</th>
+                </tr>
+              </thead>
+
+              @if (candidates.length === 0) {
+                <tr>
+                  <td colspan="3">No candidates found</td>
+                </tr>
+              }
+
+              <tbody>
+                <!-- Mostrar la lista de skills -->
+
+                @for (candidate of candidates; track candidate.id) {
+                <tr>
+                  <td>{{ candidate.candidateName }}</td>
+                  <td>{{ candidate.dasId }}</td>
+                  <td>
+                    <input type="checkbox" name="candidateSelect" [(ngModel)]="candidate.isSelected" />
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </form>
+
+      <!-- Botones -->
+      <div class="d-flex justify-content-end mt-4">
+        <button type="button" class="btn btn-secondary me-2" (click)="cancel()">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          (click)="addProject(project)"
+        >
+          Add Project
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

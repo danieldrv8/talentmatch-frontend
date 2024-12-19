@@ -8,4 +8,5 @@ export interface Candidate {
   dasId: string;
   candidateSkills: CandidateSkill[];
   skills?: Skill[];
+  isSelected?: boolean;
 }
