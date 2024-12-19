@@ -1,0 +1,27 @@
+<div class="card shadow-sm border-0 rounded">
+  <div class="col-md-12">
+      <h1>Project Details</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Project Name: {{project.projectName}}</h5>
+          <div class="card-text">
+            <strong>Skills: </strong>
+            <ul>
+              <li *ngFor="let skillName of skillNames">{{skillName}}</li>
+            </ul>
+          </div>
+          <div class="card-text">
+            <strong>Candidates: </strong>
+            <ul>
+              <li *ngFor="let candidateName of candidateNames">{{candidateName}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+</div>

@@ -40,4 +40,8 @@ export class ProjectsComponent {
     this.router.navigate(['/add-project']);
   }
 
+  viewProjectById(projectId: number) {
+    this.router.navigate(['/view-project', projectId]);
+  }
+
 }

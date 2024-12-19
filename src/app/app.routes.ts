@@ -7,6 +7,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { EditProjectComponent } from './components/edit-project/edit-project.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
+import { ViewProjectComponent } from './components/view-project/view-project.component';
 
 export const routes: Routes = [
   {
@@ -32,5 +33,8 @@ export const routes: Routes = [
   },
   {
     path: 'add-project', component: AddProjectComponent
-  }
+  },
+  {
+    path: 'view-project/:id', component: ViewProjectComponent
+  },
 ];
